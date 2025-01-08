@@ -1,0 +1,156 @@
+/* Estilos generales */
+@import url('./xy-theme.css');
+
+html,
+body {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
+
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow aside {
+  border-right: 1px solid #444;
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #333;
+  color: #fff;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .dndnode {
+  height: 20px;
+  padding: 4px;
+  border: 1px solid #1a192b;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: grab;
+}
+
+.dndflow .dndnode.input {
+  border-color: #0041d0;
+}
+.dndflow .dndnode.message {
+  border-color: #ff0072;
+}
+.dndflow .dndnode.wait {
+  border-color: #ffa500;
+}
+.dndflow .dndnode.trigger {
+  border-color: #008000;
+}
+.dndflow .dndnode.IANode {
+  border-color: #800080;
+}
+.dndflow .dndnode.httpRequest {
+  border-color: #00ced1;
+}
+.dndflow .dndnode.condition {
+  border-color: #ff4500;
+}
+.dndflow .dndnode.action {
+  border-color: #ffd700;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.dndflow .selectall {
+  margin-top: 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .dndflow {
+    flex-direction: row;
+  }
+
+  .dndflow aside {
+    width: 20%;
+    max-width: 250px;
+  }
+}
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content form p {
+  margin: 10px 0;
+}
+
+.modal-content form input[type="text"] {
+  padding: 8px;
+  border: 1px solid #444;
+  border-radius: 4px;
+  background-color: #555;
+  color: #fff;
+}
+
+.modal-content form input[type="text"]:focus {
+  outline: none;
+  border-color: #888;
+}
+
+.modal-content form label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
