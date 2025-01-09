@@ -1,16 +1,176 @@
-/* Estilos generales */
-@import url('./xy-theme.css');
+/* Variables generales */
+:root {
+  --max-width: 1280px;
+  --margin: 0 auto;
+  --padding: 2rem;
+  --text-align: center;
+  --fixed-position: fixed;
+  --top: 1rem;
+  --left: 1rem;
+  --border-radius: 15px;
+  --button-padding: 0.5rem 1rem;
+  --cursor: pointer;
+  --transition: 0.3s ease;
+  --border: none;
+  --z-index: 1000;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --border-radius-card: 8px;
+  --padding-card: 2em;
+  --transition-card: background-color 0.3s ease, color 0.3s ease;
+  --transition-color: color 0.3s ease;
+  --height: 100%;
+  --width: 100%;
+  --modal-padding: 20px;
+  --modal-border-radius: 4px;
+  --modal-width: 80%;
+  --modal-max-width: 500px;
+  --modal-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  --modal-z-index: 1000;
+  --modal-position: fixed;
+  --modal-left: 0;
+  --modal-top: 0;
+  --modal-overflow: auto;
+  --modal-display: flex;
+  --modal-justify-content: center;
+  --modal-align-items: center;
+  --close-font-size: 28px;
+  --close-font-weight: bold;
+  --close-float: right;
+  --input-padding: 8px;
+  --input-border-radius: 4px;
+  --input-transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  --input-outline: none;
+  --label-margin-bottom: 5px;
+  --label-font-weight: bold;
+  --aside-padding: 15px 10px;
+  --aside-font-size: 12px;
+  --aside-margin-bottom: 10px;
+  --dndnode-height: 20px;
+  --dndnode-padding: 4px;
+  --dndnode-border-radius: 2px;
+  --dndnode-margin-bottom: 10px;
+  --dndnode-display: flex;
+  --dndnode-justify-content: center;
+  --dndnode-align-items: center;
+  --dndnode-cursor: grab;
+  --dndnode-transition: border-color 0.3s ease;
+  --reactflow-wrapper-flex-grow: 1;
+  --reactflow-wrapper-height: 100%;
+  --selectall-margin-top: 10px;
+  --controls-button-padding: 5px;
+  --controls-button-border-radius: 4px;
+  --controls-button-cursor: pointer;
+  --controls-button-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  --node-padding: 10px;
+  --node-border-radius: 4px;
+  --node-transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  --node-hover-shadow-color: rgba(0, 0, 0, 0.2);
+  --minimap-transition: background-color 0.3s ease, border-color 0.3s ease;
+  --minimap-node-transition: fill 0.3s ease, stroke 0.3s ease;
+}
 
-html,
-body {
-  margin: 0;
-  font-family: sans-serif;
-  box-sizing: border-box;
+/* Estilos generales */
+#root {
+  max-width: var(--max-width);
+  margin: var(--margin);
+  padding: var(--padding);
+  text-align: var(--text-align);
+}
+
+.theme-toggle {
+  position: var(--fixed-position);
+  top: var(--top);
+  left: var(--left);
+  background-color: #555;
+  color: #fff;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--button-padding);
+  cursor: var(--cursor);
+  z-index: var(--z-index);
+  transition: background-color var(--transition);
+}
+
+.theme-toggle:hover {
+  background-color: #333;
+}
+
+/* Tema oscuro */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-mode .read-the-docs {
+  color: #cccccc;
+}
+
+/* Tema claro */
+.light-mode {
+  background-color: #f9f9f9;
+  color: #000000;
+}
+
+.light-mode .card {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.light-mode .read-the-docs {
+  color: #888888;
+}
+
+/* Otros estilos existentes */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: var(--padding-card);
+  border-radius: var(--border-radius-card);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition-card);
+}
+
+.read-the-docs {
+  color: #888;
+  transition: var(--transition-color);
 }
 
 #app {
-  width: 100vw;
-  height: 100vh;
+  width: var(--width);
+  height: var(--height);
 }
 
 .dndflow {
@@ -21,61 +181,38 @@ body {
 }
 
 .dndflow aside {
-  border-right: 1px solid #444;
-  padding: 15px 10px;
-  font-size: 12px;
-  background: #333;
-  color: #fff;
+  border-right: 1px solid;
+  padding: var(--aside-padding);
+  font-size: var(--aside-font-size);
+  background: var(--aside-bg-color);
+  color: var(--text-color);
+  transition: background var(--transition), color var(--transition);
 }
 
 .dndflow aside .description {
-  margin-bottom: 10px;
+  margin-bottom: var(--aside-margin-bottom);
 }
 
 .dndflow .dndnode {
-  height: 20px;
-  padding: 4px;
-  border: 1px solid #1a192b;
-  border-radius: 2px;
-  margin-bottom: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: grab;
-}
-
-.dndflow .dndnode.input {
-  border-color: #0041d0;
-}
-.dndflow .dndnode.message {
-  border-color: #ff0072;
-}
-.dndflow .dndnode.wait {
-  border-color: #ffa500;
-}
-.dndflow .dndnode.trigger {
-  border-color: #008000;
-}
-.dndflow .dndnode.IANode {
-  border-color: #800080;
-}
-.dndflow .dndnode.httpRequest {
-  border-color: #00ced1;
-}
-.dndflow .dndnode.condition {
-  border-color: #ff4500;
-}
-.dndflow .dndnode.action {
-  border-color: #ffd700;
+  height: var(--dndnode-height);
+  padding: var(--dndnode-padding);
+  border: 1px solid var(--node-border-color);
+  border-radius: var(--dndnode-border-radius);
+  margin-bottom: var(--dndnode-margin-bottom);
+  display: var(--dndnode-display);
+  justify-content: var(--dndnode-justify-content);
+  align-items: var(--dndnode-align-items);
+  cursor: var(--dndnode-cursor);
+  transition: var(--dndnode-transition);
 }
 
 .dndflow .reactflow-wrapper {
-  flex-grow: 1;
-  height: 100%;
+  flex-grow: var(--reactflow-wrapper-flex-grow);
+  height: var(--reactflow-wrapper-height);
 }
 
 .dndflow .selectall {
-  margin-top: 10px;
+  margin-top: var(--selectall-margin-top);
 }
 
 @media screen and (min-width: 768px) {
@@ -88,43 +225,45 @@ body {
     max-width: 250px;
   }
 }
+
 .modal {
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
+  position: var(--modal-position);
+  z-index: var(--modal-z-index);
+  left: var(--modal-left);
+  top: var(--modal-top);
+  width: var(--width);
+  height: var(--height);
+  overflow: var(--modal-overflow);
   background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: var(--modal-display);
+  justify-content: var(--modal-justify-content);
+  align-items: var(--modal-align-items);
 }
 
 .modal-content {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  width: 80%;
-  max-width: 500px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: var(--modal-bg-color);
+  color: var(--text-color);
+  padding: var(--modal-padding);
+  border: 1px solid var(--modal-border-color);
+  border-radius: var(--modal-border-radius);
+  width: var(--modal-width);
+  max-width: var(--modal-max-width);
+  box-shadow: var(--modal-box-shadow);
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  color: var(--close-btn-color);
+  float: var(--close-float);
+  font-size: var(--close-font-size);
+  font-weight: var(--close-font-weight);
 }
 
 .close:hover,
 .close:focus {
-  color: #fff;
+  color: var(--close-btn-hover-color);
   text-decoration: none;
-  cursor: pointer;
+  cursor: var(--cursor);
 }
 
 .modal-content form {
@@ -137,20 +276,347 @@ body {
 }
 
 .modal-content form input[type="text"] {
-  padding: 8px;
-  border: 1px solid #444;
-  border-radius: 4px;
-  background-color: #555;
-  color: #fff;
+  padding: var(--input-padding);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: var(--input-transition);
 }
 
 .modal-content form input[type="text"]:focus {
-  outline: none;
-  border-color: #888;
+  outline: var(--input-outline);
+  border-color: var(--input-focus-border-color);
 }
 
 .modal-content form label {
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin-bottom: var(--label-margin-bottom);
+  font-weight: var(--label-font-weight);
 }
 
+/* Variables de tema para dark-mode */
+.dark-mode {
+  --aside-bg-color: #333;
+  --text-color: #fff;
+  --node-border-color: #444;
+  --modal-bg-color: #333;
+  --modal-border-color: #444;
+  --close-btn-color: #aaa;
+  --close-btn-hover-color: #fff;
+  --input-bg-color: #555;
+  --input-border-color: #444;
+  --input-focus-border-color: #888;
+  --controls-button-bg-color: #444;
+  --controls-button-text-color: #fff;
+  --controls-button-border-color: #555;
+  --controls-button-hover-bg-color: #555;
+  --controls-button-hover-border-color: #666;
+  --node-bg-color: #333;
+  --node-text-color: #fff;
+  --node-hover-shadow-color: rgba(255, 255, 255, 0.2);
+  --body-bg-color: #121212;
+  --minimap-bg-color: #1e1e1e;
+  --minimap-border-color: #444;
+  --minimap-node-bg-color: #333;
+  --minimap-node-border-color: #555;
+  --dndnode-input-bg-color: #0055cc;
+  --dndnode-message-bg-color: #cc0066;
+  --dndnode-wait-bg-color: #cc9900;
+  --dndnode-trigger-bg-color: #00cc66;
+  --dndnode-ianode-bg-color: #9900cc;
+  --dndnode-httprequest-bg-color: #00b3cc;
+  --dndnode-condition-bg-color: #cc3300;
+  --dndnode-action-bg-color: #ccaa00;
+}
+
+/* Variables de tema para light-mode */
+.light-mode {
+  --aside-bg-color: #f0f0f0;
+  --text-color: #000;
+  --node-border-color: #ccc;
+  --modal-bg-color: #fff;
+  --modal-border-color: #ddd;
+  --close-btn-color: #333;
+  --close-btn-hover-color: #000;
+  --input-bg-color: #fff;
+  --input-border-color: #ccc;
+  --input-focus-border-color: #888;
+  --controls-button-bg-color: #f0f0f0;
+  --controls-button-text-color: #000;
+  --controls-button-border-color: #ccc;
+  --controls-button-hover-bg-color: #e0e0e0;
+  --controls-button-hover-border-color: #bbb;
+  --node-bg-color: #fff;
+  --node-text-color: #000;
+  --node-hover-shadow-color: rgba(0, 0, 0, 0.2);
+  --body-bg-color: #f9f9f9;
+  --minimap-bg-color: #ffffff;
+  --minimap-border-color: #ddd;
+  --minimap-node-bg-color: #e0e0e0;
+  --minimap-node-border-color: #bbb;
+  --dndnode-input-bg-color: #3385ff;
+  --dndnode-message-bg-color: #ff3385;
+  --dndnode-wait-bg-color: #ffcc33;
+  --dndnode-trigger-bg-color: #33cc99;
+  --dndnode-ianode-bg-color: #cc33ff;
+  --dndnode-httprequest-bg-color: #33d6ff;
+  --dndnode-condition-bg-color: #ff5733;
+  --dndnode-action-bg-color: #ffcc33;
+}
+
+/* Eliminando el borde blanco de la página */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: var(--height);
+  width: var(--width);
+  background-color: var(--body-bg-color);
+  color: var(--text-color);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+/* Estilos dinámicos para .react-flow__minimap-svg */
+.react-flow__minimap-svg {
+  background-color: var(--minimap-bg-color);
+  border: 1px solid var(--minimap-border-color);
+  transition: var(--minimap-transition);
+}
+
+.react-flow__minimap-svg rect {
+  fill: var(--minimap-node-bg-color);
+  stroke: var(--minimap-node-border-color);
+  transition: var(--minimap-node-transition);
+}
+
+.dndflow .dndnode.input {
+  background-color: var(--dndnode-input-bg-color);
+}
+
+.dndflow .dndnode.message {
+  background-color: var(--dndnode-message-bg-color);
+}
+
+.dndflow .dndnode.wait {
+  background-color: var(--dndnode-wait-bg-color);
+}
+
+.dndflow .dndnode.trigger {
+  background-color: var(--dndnode-trigger-bg-color);
+}
+
+.dndflow .dndnode.IANode {
+  background-color: var(--dndnode-ianode-bg-color);
+}
+
+.dndflow .dndnode.httpRequest {
+  background-color: var(--dndnode-httprequest-bg-color);
+}
+
+.dndflow .dndnode.condition {
+  background-color: var(--dndnode-condition-bg-color);
+}
+
+.dndflow .dndnode.action {
+  background-color: var(--dndnode-action-bg-color);
+}
+
+.react-flow__controls-button {
+  background-color: var(--controls-button-bg-color);
+  color: var(--controls-button-text-color);
+  border: 1px solid var(--controls-button-border-color);
+  padding: var(--controls-button-padding);
+  border-radius: var(--controls-button-border-radius);
+  cursor: var(--controls-button-cursor);
+  transition: var(--controls-button-transition);
+}
+
+.react-flow__controls-button:hover {
+  background-color: var(--controls-button-hover-bg-color);
+  border-color: var(--controls-button-hover-border-color);
+}
+
+.react-flow__node {
+  background-color: var(--node-bg-color);
+  color: var(--node-text-color);
+  border: 1px solid var(--node-border-color);
+  border-radius: var(--node-border-radius);
+  padding: var(--node-padding);
+  transition: var(--node-transition);
+}
+
+.react-flow__node:hover {
+  box-shadow: 0 4px 8px var(--node-hover-shadow-color);
+}
+
+.modal {
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.modal-content {
+  background-color: var(--node-bg-color);
+  color: var(--text-color);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.close {
+  color: var(--text-color);
+  align-self: flex-end;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: var(--button-hover-background-color);
+}
+
+.modal-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+}
+
+.modal-content input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: var(--input-background-color);
+  color: var(--text-color);
+  transition: border-color 0.3s ease;
+}
+
+.modal-content input[type="text"]:focus {
+  outline: none;
+  border-color: var(--button-hover-background-color);
+}
+
+.modal-content button {
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-content button:hover {
+  background-color: var(--button-hover-background-color);
+  transform: scale(1.05);
+}
+
+
+.node-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.node-info h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.node-info p {
+  margin: 0.25rem 0;
+}
+
+.node-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.node-fields p {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.node-fields label {
+  font-weight: bold;
+  
+}
+
+.node-fields input {
+
+  border-radius: 4px;
+  background-color: red;
+  color: var(--text-color);
+  transition: var(--input-transition);
+}
+.modal-content input[type="text"] {
+  padding: var(--input-padding);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: var(--input-transition);
+}
+
+.modal-content input[type="text"]:focus {
+  outline: var(--input-outline);
+  border-color: var(--input-focus-border-color);
+}
+.modal-content input[type="button"] {
+  padding: var(--input-padding);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: var(--input-transition);
+}
+
+.modal-content input[type="button"]:focus {
+  outline: var(--input-outline);
+  border-color: var(--input-focus-border-color);
+}
+
+.modal-content .deleteButton {
+  padding: var(--button-padding);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  cursor: var(--cursor);
+  transition: var(--transition);
+  background-color: #ff0000;
+}
+.modal-content .action-button {
+  display: block;
+  margin: 0 auto;
+  padding: var(--input-padding);
+  border: 1px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  background-color: var(--input-bg-color);
+  color: var(--text-color);
+  transition: var(--input-transition);
+}

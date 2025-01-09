@@ -1,0 +1,31 @@
+{
+    "startNode": {
+        "id": "startNode",
+        "type": "MessageNode",
+        "name": "Default Node",
+        "messages": [
+            {
+                "type": "text",
+                "text": {
+                    "preview_url": false,
+                    "body": "Buen día, Soy Magnético!"
+                }
+            },
+            {
+                "type": "image",
+                "image": {
+                    "link": "https://static.magneto365.com/wordpress/2024/07/04145740/Consejos-clave-para-mejorar-tu-hoja-de-vida.png",
+                    "caption": "Imagen de Magneto"
+                }
+            },
+            {
+                "type": "text",
+                "text": {
+                    "preview_url": false,
+                    "body": "¿Cuál es tu nombre?✨"
+                }
+            }
+        ],
+        "nextNodeId": "inputNombre"
+    }
+}
