@@ -1,0 +1,10 @@
+
+.canvas {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    grid-column: 1;
+    background-color: black;
+}

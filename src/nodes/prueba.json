@@ -1,0 +1,44 @@
+{
+    "botones": {
+        "id": "botones",
+        "type": "MessageNode",
+        "name": "Default Node",
+        "messages": [
+            {
+                "type": "interactive",
+                "interactive": {
+                    "type": "button",
+                    "body": {
+                        "text": "{{candidate_name}}, selecciona una de las opciones:"
+                    },
+                    "action": {
+                        "buttons": [
+                            {
+                                "type": "reply",
+                                "reply": {
+                                    "id": "welcomeFlow@buscoEmpleo",
+                                    "title": "Busco Empleo"
+                                }
+                            },
+                            {
+                                "type": "reply",
+                                "reply": {
+                                    "id": "welcomeFlow@soporte",
+                                    "title": "Necesito soporte"
+                                }
+                            },
+                            {
+                                "type": "reply",
+                                "reply": {
+                                    "id": "welcomeFlow@desuscribirme",
+                                    "title": "Desuscribirme"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "nextNodeId": null
+    }
+}

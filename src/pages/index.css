@@ -1,0 +1,104 @@
+/* Contenedor principal */
+.app {
+    /* Ajusta el tamaño o usa 100vw/100vh si quieres en pantalla completa */
+    width: 100%;
+    height: 100%;
+    
+    /* Fuente base */
+    font-family: Arial, sans-serif;
+    
+    /* Color de fondo principal (marrón) */
+    color: #ffffff; /* color de texto por defecto */
+  }
+  
+  /* Cabecera */
+  .app-header {
+    padding: 10px 20px;
+    background-color: #2d1a07; /* un marrón un poco más oscuro */
+  }
+  
+  .header-title {
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  /* Contenedor principal de contenido (Flow Manager a la izquierda, Flow Editor a la derecha) */
+  .app-main {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    flex-direction: row;
+    height: calc(100% - 60px); /* ajusta según el alto que ocupe tu header */
+  }
+  
+  /* Sección izquierda: Flow Manager */
+  .flow-manager {
+    grid-column: 1; /* Ocupa la primera columna del grid */
+    display: flex;
+    flex-direction: column;
+    background-color: #4a2c0d;
+    padding: 20px;
+  }
+  
+  /* Botón para crear flujos */
+  .flow-add {
+    background-color: #1b3b1b;
+    border: 2px solid #1b3b1b;
+    padding: 10px;
+    color: #ffffff;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-weight: bold;
+    /* Un pequeño hover */
+    transition: background-color 0.3s ease;
+  }
+  .flow-add:hover {
+    background-color: #264e26;
+  }
+
+  /* Sección derecha: Flow Editor */
+  .flow-editor {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  
+  /* Título de la sección central (Nombre Flujo) */
+  .flow-editor-title {
+    background-color: #0c1935; /* un azul oscuro */
+    padding: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Área de trabajo (canvas) */
+  .flow-editor-canvas {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    flex: 1;
+    /* Para mostrar bordes, guías, etc. si lo deseas: */
+    /* border: 2px dashed #666; */
+  }
+/* index.css */
+
+.flow-list {
+    margin-top: 16px;
+  }
+  
+  /* Estilos para cada elemento que se añada a la lista */
+  .flow-item {
+    margin: 8px 0;
+    padding: 10px;
+    color: #333;
+    background: #f4f4f4;        /* Fondo gris claro */
+    border-radius: 4px;
+    border: 1px solid #ddd;     /* Borde sutil */
+  }
+  
+  /* Opcionalmente, puedes añadir algún hover */
+  .flow-item:hover {
+    background: #eaeaea;        /* Efecto hover */
+  }
+  

@@ -1,0 +1,98 @@
+/* Ejemplo de hoja de estilos para el componente MessageNode */
+
+/* Contenedor principal del componente */
+.message-node {
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 600px;
+    background-color: var(--node-bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--node-border-color);
+    border-radius: var(--node-border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--node-transition);
+  }
+  
+  /* Textos fijos de Label y Message */
+  .message-node .fixed-text {
+    font-weight: var(--label-font-weight);
+    margin: 0.5rem 0;
+  }
+  
+  /* Botón principal para añadir un nuevo "botón" */
+  .message-node .add-button {
+    padding: var(--button-padding);
+    border: var(--border);
+    border-radius: var(--border-radius);
+    cursor: var(--cursor);
+    transition: background-color var(--transition);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+  }
+  
+  /* Cuando se ha llegado al límite (disabled) */
+  .message-node .add-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+  
+  /* Contenedor que agrupa cada "botón" dinámico */
+  .message-node .dynamic-button-container {
+    display: flex;
+    align-items: center;
+    margin: 0.5rem 0;
+  }
+  
+  /* Input para editar el texto del "botón" dinámico */
+  .message-node .input-field {
+    padding: var(--input-padding);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    transition: var(--input-transition);
+    margin-right: 0.5rem;
+  }
+  
+  /* Botones de Apply, Edit, Delete */
+  .message-node .apply-button,
+  .message-node .edit-button,
+  .message-node .delete-button {
+    padding: var(--button-padding);
+    border: 1px solid var(--input-border-color);
+    border-radius: var(--input-border-radius);
+    background-color: var(--input-bg-color);
+    color: var(--text-color);
+    transition: var(--input-transition);
+    cursor: var(--cursor);
+    margin-left: 0.5rem;
+  }
+  
+  /* Estilo particular para el botón Delete */
+  .message-node .delete-button {
+    background-color: #ff0000;
+    color: #fff;
+  }
+  
+  /* Hover en cualquiera de los botones */
+  .message-node .apply-button:hover,
+  .message-node .edit-button:hover,
+  .message-node .delete-button:hover,
+  .message-node .add-button:hover {
+    background-color: var(--button-hover-background-color);
+    transform: scale(1.05);
+  }
+  
+  /* Ejemplo de estilo para el texto guardado (cuando no está en edición) */
+  .message-node .button-label {
+    margin-right: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Opcional: ejemplo de secciones o títulos */
+  .message-node h2,
+  .message-node h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  

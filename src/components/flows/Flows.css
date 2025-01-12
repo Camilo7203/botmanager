@@ -1,0 +1,38 @@
+/* index.css */
+
+.flow-list {
+    flex: 1; /* ocupa el resto del espacio vertical */
+    background-color: #000000;
+    padding: 10px;
+    max-width: 100vh;
+     /* para que sea desplazable si hay muchos flujos */
+  }
+  .FlowList {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+    .flow-list-container{
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    }
+    .btn .flow-item{
+    flex:1;
+    }
+  /* Estilos para cada elemento que se añada a la lista */
+  .flow-item {
+    flex:1;
+    margin: 8px 0;
+    padding: 10px;
+    color: #333;
+    background: #f4f4f4;        /* Fondo gris claro */
+    border-radius: 4px;
+    border: 1px solid #ddd;     /* Borde sutil */
+  }
+  
+  /* Opcionalmente, puedes añadir algún hover */
+  .flow-item:hover {
+    background: rebeccapurple;        /* Efecto hover */
+  }
+  

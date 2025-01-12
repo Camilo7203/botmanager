@@ -1,0 +1,54 @@
+{
+    "razonesDesuscribirme": {
+        "id": "razonesDesuscribirme",
+        "type": "MessageNode",
+        "name": "Default Node",
+        "messages": [
+            {
+                "type": "interactive",
+                "interactive": {
+                    "type": "list",
+                    "body": {
+                        "text": "Entiendo, {{candidate_name}}, me gustaría saber la razon:"
+                    },
+                    "action": {
+                        "button": "selecciona la razon",
+                        "sections": [
+                            {
+                                "title": "Razones felices",
+                                "rows": [
+                                    {
+                                        "id": "welcomeFlow@cierre1",
+                                        "title": "Ya tengo empleo",
+                                        "description": "He conseguido empleo y ya no necesito a Magneto"
+                                    },
+                                    {
+                                        "id": "welcomeFlow@cierre2",
+                                        "title": "Soy independiente",
+                                        "description": "Ya no estoy buscando empleo porque tengo mi propia empresa"
+                                    }
+                                ]
+                            },
+                            {
+                                "title": "Razones no felices",
+                                "rows": [
+                                    {
+                                        "id": "welcomeFlow@cierre3",
+                                        "title": "Estoy cansado",
+                                        "description": "No quiero recibir mas notificaciones de Magneto"
+                                    },
+                                    {
+                                        "id": "welcomeFlow@cierre4",
+                                        "title": "Magneto no sirve",
+                                        "description": "Magneto no sirve porque nada que me dan empleo"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "nextNodeId": null
+    }
+}
